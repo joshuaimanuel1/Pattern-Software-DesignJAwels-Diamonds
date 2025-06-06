@@ -1,7 +1,3 @@
-Berikut adalah versi yang telah ditingkatkan dan dibuat lebih menarik dari file `README.md` Anda:
-
----
-
 # 💎 JAwels & Diamonds - Web-Based Online Jewelry Store
 
 **JAwels & Diamonds** adalah aplikasi toko perhiasan berbasis web yang dikembangkan sebagai bagian dari tugas mata kuliah **COMP6114 - Pattern Software Design**. Dibangun menggunakan **ASP.NET Web Forms** dan menerapkan **Domain-Driven Design (DDD)**, aplikasi ini dirancang untuk menghadirkan pengalaman belanja online yang elegan, efisien, dan aman bagi pengguna.
