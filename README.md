@@ -1,143 +1,152 @@
-JAwels & Diamonds - Web-Based Online Store
-Proyek ini adalah aplikasi web toko perhiasan online yang dikembangkan sebagai bagian dari tugas mata kuliah COMP6114 - Pattern Software Design. Aplikasi ini dibangun menggunakan platform ASP.NET Web Forms dengan arsitektur Domain-Driven Design (DDD) untuk mengelola pesanan dan menyediakan pengalaman belanja yang nyaman bagi pelanggan.
+Berikut adalah versi yang telah ditingkatkan dan dibuat lebih menarik dari file `README.md` Anda:
 
-Fitur Utama
-Aplikasi ini memiliki tiga peran pengguna yang berbeda: Tamu (Guest), Pelanggan (Customer), dan Admin.
+---
 
-👤 Tamu (Guest)
-Melihat Perhiasan: Menjelajahi semua produk yang tersedia di toko.
+# 💎 JAwels & Diamonds - Web-Based Online Jewelry Store
 
-Login: Masuk ke akun pelanggan yang sudah ada. Fitur "Remember Me" menggunakan Cookie.
+**JAwels & Diamonds** adalah aplikasi toko perhiasan berbasis web yang dikembangkan sebagai bagian dari tugas mata kuliah **COMP6114 - Pattern Software Design**. Dibangun menggunakan **ASP.NET Web Forms** dan menerapkan **Domain-Driven Design (DDD)**, aplikasi ini dirancang untuk menghadirkan pengalaman belanja online yang elegan, efisien, dan aman bagi pengguna.
 
-Registrasi: Mendaftar sebagai pelanggan baru dengan validasi data yang komprehensif.
+---
 
-🛍️ Pelanggan (Customer)
-Semua fitur Tamu (kecuali Login & Register setelah masuk).
+## ✨ Fitur Unggulan
 
-Keranjang Belanja (Cart):
+Aplikasi ini mendukung **tiga peran pengguna** dengan fitur khusus untuk masing-masing:
 
-Menambahkan perhiasan ke keranjang.
+### 👤 Tamu (Guest)
 
-Memperbarui kuantitas item di keranjang.
+* 🔍 **Jelajahi Produk**: Lihat semua perhiasan yang tersedia.
+* 🔐 **Login**: Masuk ke akun yang sudah terdaftar (dengan fitur *Remember Me* menggunakan cookie).
+* 📝 **Registrasi**: Daftar sebagai pelanggan baru dengan validasi input yang kuat.
 
-Menghapus item dari keranjang.
+---
 
-Mengosongkan seluruh keranjang.
+### 🛍️ Pelanggan (Customer)
 
-Checkout: Melakukan proses checkout dengan memilih metode pembayaran.
+* ✅ Akses semua fitur tamu (kecuali login & registrasi setelah masuk).
+* 🛒 **Keranjang Belanja**:
 
-Riwayat Transaksi (My Orders):
+  * Tambah perhiasan ke keranjang.
+  * Perbarui kuantitas atau hapus item.
+  * Kosongkan keranjang.
+* 💳 **Checkout**:
 
-Melihat semua riwayat transaksi.
+  * Pilih metode pembayaran & lakukan pembelian.
+* 📦 **Riwayat Pesanan**:
 
-Melihat detail setiap transaksi.
+  * Lihat semua transaksi yang pernah dilakukan.
+  * Lihat detail transaksi & ubah status ke *Done* atau *Rejected*.
+* ⚙️ **Manajemen Profil**:
 
-Mengonfirmasi penerimaan paket (Done) atau menolak paket (Rejected).
+  * Lihat dan ubah informasi akun serta ganti password.
 
-Manajemen Profil:
+---
 
-Melihat informasi profil.
+### 👑 Admin
 
-Mengubah password akun.
+* ✅ Akses semua fitur tamu (kecuali login & registrasi).
+* 💼 **Manajemen Produk** *(CRUD)*:
 
-👑 Admin
-Semua fitur Tamu (kecuali Login & Register).
+  * Tambah, ubah, lihat, atau hapus produk perhiasan.
+* 📬 **Proses Pesanan**:
 
-Manajemen Perhiasan (CRUD):
+  * Ubah status pesanan: `Payment Pending → Shipment Pending → Arrived`.
+* 📊 **Laporan Transaksi**:
 
-Create: Menambahkan produk perhiasan baru ke dalam sistem.
+  * Lihat laporan transaksi yang selesai (*Done*) via SAP Crystal Reports.
+  * Termasuk detail transaksi, subtotal, dan total pendapatan.
+* ⚙️ **Manajemen Profil**:
 
-Read: Melihat semua detail produk.
+  * Sama seperti pelanggan: lihat & ubah info akun.
 
-Update: Mengedit informasi produk yang sudah ada.
+---
 
-Delete: Menghapus produk dari sistem.
+## 🧠 Arsitektur & Teknologi
 
-Manajemen Pesanan (Handle Orders):
+Proyek ini dibangun dengan pendekatan **Domain-Driven Design (DDD)**, memisahkan logika bisnis dari antarmuka dan infrastruktur agar pengembangan lebih terstruktur dan scalable.
 
-Memproses pesanan yang masuk.
+### 🔧 Teknologi yang Digunakan
 
-Mengubah status pesanan dari "Payment Pending" -> "Shipment Pending" -> "Arrived".
+* **Framework**: ASP.NET Web Forms (.NET Framework 4.7.2+)
+* **Bahasa**: C#
+* **Database & ORM**: SQL Server LocalDB + Entity Framework 6 (*Code-First*)
+* **Pelaporan**: SAP Crystal Reports for Visual Studio
+* **IDE**: Visual Studio 2022
 
-Laporan Transaksi (Reports):
+---
 
-Melihat laporan semua transaksi yang berhasil (Done) menggunakan SAP Crystal Reports.
+## 🏗️ Struktur Proyek (DDD Layers)
 
-Laporan mencakup detail transaksi, subtotal, dan grand total pendapatan.
+```
+📁 View Layer        → Halaman .aspx dan code-behind.
+📁 Controller Layer  → Validasi input & delegasi ke handler.
+📁 Handler Layer     → Inti logika bisnis dan pengelolaan proses.
+📁 Repository Layer  → Abstraksi akses ke database.
+📁 Factory Layer     → Pembuatan objek domain yang konsisten.
+📁 Model Layer       → Kelas entitas (POCO) yang dimodelkan dengan EF.
+```
 
-Manajemen Profil:
+---
 
-Melihat informasi profil.
+## 🚀 Cara Menjalankan Proyek (Setup & Instalasi)
 
-Mengubah password akun.
+### 📋 Prasyarat
 
-Arsitektur & Teknologi
-Proyek ini dirancang dengan mengikuti prinsip-prinsip Domain-Driven Design (DDD) untuk memisahkan logika bisnis dari infrastruktur dan antarmuka pengguna, sehingga menghasilkan kode yang lebih terstruktur dan mudah dikelola.
+* Visual Studio 2022 (ASP.NET workload)
+* SQL Server Express LocalDB
+* SAP Crystal Reports for Visual Studio
 
-Teknologi yang Digunakan
-Framework: ASP.NET Web Forms (.NET Framework 4.7.2+)
+### 📥 Clone Repositori
 
-Bahasa: C#
-
-Database & ORM: SQL Server LocalDB & Entity Framework 6 (Code-First)
-
-Arsitektur: Domain-Driven Design (DDD)
-
-Pelaporan: SAP Crystal Reports for Visual Studio
-
-IDE: Visual Studio 2022
-
-Struktur Proyek (Lapisan DDD)
-View Layer: Terdiri dari halaman .aspx dan code-behind-nya. Bertanggung jawab untuk menampilkan informasi kepada pengguna dan menangkap input pengguna.
-
-Controller Layer: Kelas C# yang dipanggil oleh View untuk memvalidasi input dan mendelegasikan permintaan ke lapisan di bawahnya.
-
-Handler Layer: Inti dari logika bisnis aplikasi. Berisi semua proses dan aturan bisnis, serta berkoordinasi dengan Repository untuk manipulasi data.
-
-Repository Layer: Bertindak sebagai jembatan antara Handler dan database. Menyediakan antarmuka untuk mengakses dan memanipulasi objek domain tanpa mengekspos detail implementasi database.
-
-Factory Layer: Digunakan untuk mengenkapsulasi proses pembuatan objek yang kompleks, memastikan objek yang dibuat selalu dalam keadaan konsisten.
-
-Model Layer: Berisi kelas-kelas entitas domain (POCO - Plain Old CLR Object) yang merepresentasikan konsep bisnis dan struktur data. Dikelola menggunakan Entity Framework.
-
-Setup & Instalasi
-Untuk menjalankan proyek ini di lingkungan lokal, ikuti langkah-langkah berikut:
-
-Prasyarat:
-
-Visual Studio 2022 (dengan workload ASP.NET and web development).
-
-SQL Server Express LocalDB (biasanya terinstal bersama Visual Studio).
-
-SAP Crystal Reports for Visual Studio.
-
-Clone Repositori:
-
+```bash
 git clone https://github.com/joshuaimanuel1/Pattern-Software-DesignJAwels-Diamonds.git
 cd Pattern-Software-DesignJAwels-Diamonds
+```
 
-Buka Proyek:
+### 📂 Buka Solusi
 
-Buka file solution (.sln) dengan Visual Studio 2022.
+* Buka file `.sln` di Visual Studio 2022.
 
-Restore Paket NuGet:
+### 📦 Restore NuGet Packages
 
-Klik kanan pada Solution di Solution Explorer, lalu pilih "Restore NuGet Packages". Ini akan mengunduh paket yang diperlukan seperti Entity Framework.
+* Klik kanan pada **Solution** → *Restore NuGet Packages*.
 
-Konfigurasi Database:
+### ⚙️ Konfigurasi Database
 
-Buka file Web.config.
+* Buka `Web.config`, pastikan koneksi bernama `JAwelsDbConnectionString` sesuai dengan lingkungan Anda.
+* Buka **Package Manager Console** dan jalankan:
 
-Pastikan connectionString bernama JAwelsDbConnectionString sudah dikonfigurasi dengan benar untuk lingkungan Anda (proyek ini dikonfigurasi untuk menggunakan SQL Server LocalDB secara default).
-
-Buka Package Manager Console (Tools > NuGet Package Manager > Package Manager Console).
-
-Jalankan perintah berikut untuk membuat database berdasarkan model (Code-First):
-
+```powershell
 Update-Database
+```
 
-Jalankan Aplikasi:
+### ▶️ Jalankan Aplikasi
 
-Tekan F5 atau klik tombol "Start" (dengan browser pilihan Anda) untuk menjalankan aplikasi.
+* Tekan `F5` atau klik tombol **Start** di Visual Studio.
 
-Proyek ini dibuat untuk tujuan pendidikan.
+---
+
+## 🎯 Catatan
+
+Proyek ini dikembangkan untuk **tujuan pembelajaran** dan eksplorasi pola desain perangkat lunak menggunakan pendekatan arsitektural profesional.
+
+---
+
+Berikut adalah bagian **🌐 Kontribusi** yang telah dirapikan dan ditambahkan ke dalam format profesional di bagian akhir `README.md`:
+
+---
+
+## 🌐 Kontribusi Tim
+
+Proyek ini dikerjakan secara kolaboratif oleh tim mahasiswa sebagai bagian dari tugas mata kuliah COMP6114 - Pattern Software Design. Berikut pembagian tugas anggota tim:
+
+| Fitur                                        | Kontributor |
+| -------------------------------------------- | ----------- |
+| 🔐 Login & Register                          | Lilif       |
+| 🧭 Navigation Bar                            | Lilif       |
+| 🏠 Homepage & Jewel Detail Page              | Kiki        |
+| ➕ Add Jewel & ✏️ Update Jewel Page           | Kiki        |
+| 📦 Handle Orders Page & 📊 Reports Page      | Stev        |
+| 🛒 Cart Page & 📁 My Orders Page             | Jojo        |
+| 📃 Transaction Detail Page & 👤 Profile Page | Jojo        |
+
+---
