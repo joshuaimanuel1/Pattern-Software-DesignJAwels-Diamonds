@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="projectpsd.Master.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>JAwels & Diamonds</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nav">
+            <asp:Button ID="HomeButton" runat="server" Text="Home" OnClick="HomeButton_Click"/>
+            <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click"/>
+            <asp:Button ID="RegisterButton" runat="server" Text="Register" OnClick="RegisterButton_Click"/>
+            <asp:Button ID="CartButton" runat="server" Text="Cart" OnClick="CartButton_Click"/>
+            <asp:Button ID="MyOrdersButton" runat="server" Text="My Orders" OnClick="MyOrdersButton_Click"/>
+            <asp:Button ID="ProfileButton" runat="server" Text="Profile" OnClick="ProfileButton_Click"/>
+            <asp:Button ID="LogoutButton" runat="server" Text="Logout" OnClick="LogoutButton_Click"/>
+            <asp:Button ID="AddJewelButton" runat="server" Text="Add Jewel" OnClick="AddJewelButton_Click"/>
+            <asp:Button ID="ReportButton" runat="server" Text="Report" OnClick="ReportButton_Click"/>
+            <asp:Button ID="HandleOrderButton" runat="server" Text="Handle Order" OnClick="HandleOrderButton_Click"/>
+
+            <asp:Label ID="GreetingLabel" runat="server" Text="Label"></asp:Label>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
